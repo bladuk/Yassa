@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yassa", "Yassa\Yassa.csproj", "{E8DE91F3-0806-46DC-A137-40B0691F5065}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yassa.Test", "Yassa.Test\Yassa.Test.csproj", "{4C179C2B-4D50-4AA2-A871-96BCDA5972AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8DE91F3-0806-46DC-A137-40B0691F5065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8DE91F3-0806-46DC-A137-40B0691F5065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8DE91F3-0806-46DC-A137-40B0691F5065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8DE91F3-0806-46DC-A137-40B0691F5065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C179C2B-4D50-4AA2-A871-96BCDA5972AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C179C2B-4D50-4AA2-A871-96BCDA5972AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C179C2B-4D50-4AA2-A871-96BCDA5972AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C179C2B-4D50-4AA2-A871-96BCDA5972AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

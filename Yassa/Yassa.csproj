@@ -99,6 +99,7 @@
         <Compile Include="Config.cs" />
         <Compile Include="Enums\OptionValueType.cs" />
         <Compile Include="EventHandlers.cs" />
+        <Compile Include="Extensions\PlayerExtensions.cs" />
         <Compile Include="Features\Builders\BuilderBase.cs" />
         <Compile Include="Features\Builders\ButtonBuilder.cs" />
         <Compile Include="Features\Builders\DropdownBuilder.cs" />

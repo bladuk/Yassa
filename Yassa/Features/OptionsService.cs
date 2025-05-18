@@ -178,12 +178,7 @@ public static class OptionsService
         if (node is null)
             throw new ArgumentNullException(nameof(node));
 
-        List<SettingBase> settings = new();
-
-        if (!string.IsNullOrEmpty(node.Header))
-        {
-            settings.Add(new HeaderSetting(node.Header, node.Hint ?? string.Empty, node.Padding));
-        }
+        List<SettingBase> settings = new() { node.ToBase() };
 
         foreach (IOption option in node.Options)
         {
@@ -207,7 +202,7 @@ public static class OptionsService
         if (node is null)
             throw new ArgumentNullException(nameof(node));
 
-        return from option in node.Options select _allOptions.Find(o => o.CustomId == option.CustomId)
-            into found where found != null select found.ToBase();
+        return (from option in node.Options select _allOptions.Find(o => o.CustomId == option.CustomId)
+            into found where found != null select found.ToBase()).Append(node.ToBase());
     }
 }

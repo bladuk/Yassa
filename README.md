@@ -29,7 +29,7 @@ OptionsService.Register(node);
 
 private void OnConfirmButtonClicked(Player player, ButtonOption button)
 {
-    player.CustomName = OptionsService.GetStringValue(player, "YourPlugin.NicknameContent");
+    player.CustomName = player.GetStringValue("YourPlugin.NicknameContent");
 }
 ```
 

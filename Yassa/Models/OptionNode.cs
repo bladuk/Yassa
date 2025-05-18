@@ -1,6 +1,7 @@
 ﻿// ReSharper disable MemberCanBePrivate.Global
 
 using System.Collections.Generic;
+using Exiled.API.Features.Core.UserSettings;
 using Yassa.Interfaces;
 
 namespace Yassa.Models;
@@ -19,7 +20,7 @@ public sealed class OptionNode : IValidatable
     /// Initializes a new instance of the <see cref="OptionNode"/> class.
     /// </summary>
     /// <param name="header">Text header displayed above the group.</param>
-    /// <param name="hint">Optional explanatory text shown beneath the header.</param>
+    /// <param name="hint">Optional explanatory text shown right to the header.</param>
     /// <param name="padding">Whether to reduce padding.</param>
     public OptionNode(string header, string hint = null, bool padding = false)
     {
@@ -27,6 +28,11 @@ public sealed class OptionNode : IValidatable
         Hint = hint;
         Padding = padding;
     }
+    
+    /// <summary>
+    /// Gets the cached <see cref="HeaderSetting"/> instance once built.
+    /// </summary>
+    public HeaderSetting Base { get; internal set; }
 
     /// <summary>
     /// Gets or sets the header text.
@@ -47,6 +53,12 @@ public sealed class OptionNode : IValidatable
     /// Gets or sets the list of child options contained in this node.
     /// </summary>
     public List<IOption> Options { get; set; } = new();
+    
+    /// <summary>
+    /// Converts <see cref="OptionNode"/> into <see cref="HeaderSetting"/>.
+    /// </summary>
+    public HeaderSetting ToBase() =>
+        Base ??= new HeaderSetting(Header, Hint, Padding);
 
     /// <inheritdoc/>
     public bool Validate() =>

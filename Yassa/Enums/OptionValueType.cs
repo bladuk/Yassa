@@ -1,7 +1,7 @@
 ﻿namespace Yassa.Enums;
 
 /// <summary>
-/// Indicates the run-time data type returned by an option.
+/// Indicates the runtime data type returned by an option.
 /// </summary>
 public enum OptionValueType : byte
 {

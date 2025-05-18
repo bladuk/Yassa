@@ -9,9 +9,9 @@ using Yassa.Interfaces;
 namespace Yassa.Models;
 
 /// <summary>
-/// Represents a button displayed in the settings menu.
+/// Represents a button displayed in the settings menu. This class cannot be inherited.
 /// </summary>
-public class ButtonOption : OptionBase<ButtonSetting>, IValidatable
+public sealed class ButtonOption : OptionBase<ButtonSetting>, IValidatable
 {
     /// <summary>
     /// Initializes a new instance with default values.

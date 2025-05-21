@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Yassa</id>
+        <version>1.0.0</version>
+        <authors>bladuk</authors>
+        <owners>bladuk</owners>
+        <projectUrl>https://github.com/bladuk/Yassa</projectUrl>
+        <repository type="Git" url="https://github.com/bladuk/Yassa" />
+        <license type="expression">Apache-2.0</license>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <releaseNotes>Initial release</releaseNotes>
+        <description>Yet another server-specific settings API wrapper for EXILED.</description>
+        <copyright>Copyright ©2025 bladuk</copyright>
+    </metadata>
+    
+    <files>
+        <file src="..\bin\Release\Yassa.dll" target="lib\net48" />
+        <file src="..\bin\Release\docs\Yassa.xml" target="lib\net48" />
+    </files>
+</package>

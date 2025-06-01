@@ -2,14 +2,18 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Yassa</id>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <authors>bladuk</authors>
         <owners>bladuk</owners>
         <projectUrl>https://github.com/bladuk/Yassa</projectUrl>
         <repository type="Git" url="https://github.com/bladuk/Yassa" />
         <license type="expression">Apache-2.0</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <releaseNotes>Initial release</releaseNotes>
+        <releaseNotes>
+            # Yassa 1.0.1
+            ## What's Changed
+            - Fixed options not being removed from an internal list when unregistered.
+        </releaseNotes>
         <description>Yet another server-specific settings API wrapper for EXILED.</description>
         <copyright>Copyright ©2025 bladuk</copyright>
     </metadata>

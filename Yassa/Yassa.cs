@@ -15,7 +15,7 @@ internal class Yassa : Plugin<Config>
     
     public override string Author => "bladuk.";
     
-    public override Version Version { get; } = new(1, 0, 0);
+    public override Version Version { get; } = new(1, 0, 1);
     
     public override Version RequiredExiledVersion { get; } = new(9, 6, 0);
 

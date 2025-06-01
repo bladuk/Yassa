@@ -50,7 +50,11 @@ public static class OptionsService
     /// <exception cref="ArgumentNullException">Thrown if the option node is null.</exception>
     public static void Unregister(OptionNode node, Func<Player, bool> predicate = null)
     {
-        SettingBase.Unregister(predicate, GetSettingsList(node));
+        IEnumerable<IOption> nodeOptions = GetSettingsList(node).ToList();
+        
+        SettingBase.Unregister(predicate, nodeOptions.Select(option => option.ToBase()).Append(node.ToBase()));
+        
+        _allOptions.RemoveAll(o => nodeOptions.Contains(o));
     }
 
     /// <summary>
@@ -61,7 +65,11 @@ public static class OptionsService
     /// <exception cref="ArgumentNullException">Thrown if the option node is null.</exception>
     public static void Unregister(OptionNode node, Player player)
     {
-        SettingBase.Unregister(player, GetSettingsList(node));
+        IEnumerable<IOption> nodeOptions = GetSettingsList(node).ToList();
+
+        SettingBase.Unregister(player, nodeOptions.Select(option => option.ToBase()).Append(node.ToBase()));
+
+        _allOptions.RemoveAll(o => nodeOptions.Contains(o));
     }
 
     /// <summary>
@@ -197,12 +205,12 @@ public static class OptionsService
     /// <param name="node">Tree node with options.</param>
     /// <returns>Built <see cref="SettingBase"/> list.</returns>
     /// <exception cref="ArgumentNullException">Thrown if the option node is null.</exception>
-    private static IEnumerable<SettingBase> GetSettingsList(OptionNode node)
+    private static IEnumerable<IOption> GetSettingsList(OptionNode node)
     {
         if (node is null)
             throw new ArgumentNullException(nameof(node));
 
-        return (from option in node.Options select _allOptions.Find(o => o.CustomId == option.CustomId)
-            into found where found != null select found.ToBase()).Append(node.ToBase());
+        return from option in node.Options select _allOptions.Find(o => o.CustomId == option.CustomId)
+            into found where found != null select found;
     }
 }
